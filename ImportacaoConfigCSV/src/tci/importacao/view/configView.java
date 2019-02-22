@@ -5,6 +5,9 @@
  */
 package tci.importacao.view;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author erick.nagano
@@ -39,7 +42,7 @@ public class configView extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
         jTextField4 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        tipoenvioBox = new javax.swing.JPanel();
         usuarioText = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         senhaText = new javax.swing.JTextField();
@@ -74,9 +77,9 @@ public class configView extends javax.swing.JFrame {
         tipoprocessoText = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        moduloentradaBox = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
+        modulosaidaBox = new javax.swing.JComboBox();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         idmoduloInt = new javax.swing.JTextField();
@@ -99,15 +102,13 @@ public class configView extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         indicedocumentoText = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         campowebserviceText = new javax.swing.JTextField();
-        jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        numerocolunaInt1 = new javax.swing.JTextField();
+        numerocolunaInt = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        moduloprocessoBox = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -148,96 +149,107 @@ public class configView extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(780, 740));
-        setMinimumSize(new java.awt.Dimension(780, 740));
+        setMinimumSize(new java.awt.Dimension(1127, 662));
         setResizable(false);
+        setSize(new java.awt.Dimension(1127, 662));
 
-        jPanel1.setBackground(new java.awt.Color(38, 56, 74));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(780, 740));
-        jPanel1.setName(""); // NOI18N
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tipoenvioBox.setBackground(new java.awt.Color(38, 56, 74));
+        tipoenvioBox.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.setMaximumSize(new java.awt.Dimension(1127, 662));
+        tipoenvioBox.setMinimumSize(new java.awt.Dimension(1127, 662));
+        tipoenvioBox.setName(""); // NOI18N
+        tipoenvioBox.setPreferredSize(new java.awt.Dimension(1127, 662));
+        tipoenvioBox.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usuarioText.setBackground(new java.awt.Color(99, 99, 119));
         usuarioText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 190, -1));
+        usuarioText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioTextActionPerformed(evt);
+            }
+        });
+        tipoenvioBox.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 190, -1));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuário :");
         jLabel1.setToolTipText("Infome o usuário do Webservice");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 50, 20));
+        tipoenvioBox.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 50, 20));
 
         senhaText.setBackground(new java.awt.Color(99, 99, 119));
+        senhaText.setForeground(new java.awt.Color(255, 255, 255));
         senhaText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senhaTextActionPerformed(evt);
             }
         });
-        jPanel1.add(senhaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 190, -1));
+        tipoenvioBox.add(senhaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 190, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Senha : ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 20));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 10, -1, -1));
+        tipoenvioBox.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 20));
+        tipoenvioBox.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 10, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 51, 204));
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("LOGIN WEBSERVICE CONTENT");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, 20));
+        tipoenvioBox.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 180, 20));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Caminho : ");
         jLabel5.setToolTipText("");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 60, 20));
+        tipoenvioBox.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 60, 20));
 
         caminhocsvText.setBackground(new java.awt.Color(99, 99, 119));
-        jPanel1.add(caminhocsvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 190, -1));
+        caminhocsvText.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.add(caminhocsvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 190, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Caminho do arquivo LOG");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 120, -1));
+        tipoenvioBox.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 260, -1));
 
         caminhologText.setBackground(new java.awt.Color(99, 99, 119));
-        jPanel1.add(caminhologText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 190, -1));
+        caminhologText.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.add(caminhologText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 190, -1));
 
         configdigitalizacaoText.setBackground(new java.awt.Color(99, 99, 119));
-        jPanel1.add(configdigitalizacaoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 190, -1));
+        configdigitalizacaoText.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.add(configdigitalizacaoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 190, -1));
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nome da ConfigDigitalizacao");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 140, -1));
+        tipoenvioBox.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 260, -1));
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("URL do Webservice siarco");
         jLabel8.setToolTipText("");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 300, 130, -1));
+        tipoenvioBox.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, 280, -1));
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Indice do documento : ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, 20));
+        tipoenvioBox.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, 20));
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Metadados");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 70, -1));
+        tipoenvioBox.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 70, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Metadados");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
+        tipoenvioBox.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Metadados com imagem");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 140, -1));
+        tipoenvioBox.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 180, -1));
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Cabeçalho");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
+        tipoenvioBox.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
 
         jRadioButton3.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("Sim");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
+        tipoenvioBox.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
 
         jRadioButton4.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -247,71 +259,74 @@ public class configView extends javax.swing.JFrame {
                 jRadioButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 610, -1, -1));
+        tipoenvioBox.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, -1, -1));
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Append de arquivo");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 100, -1));
+        tipoenvioBox.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 230, -1));
 
         jRadioButton5.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton5.setText("Sim");
-        jPanel1.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        tipoenvioBox.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         jRadioButton6.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton6.setText("Não");
-        jPanel1.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
+        tipoenvioBox.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Tipo arquivo : ");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 70, 20));
+        tipoenvioBox.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 80, 20));
 
         tipoarquivoText.setBackground(new java.awt.Color(99, 99, 119));
-        jPanel1.add(tipoarquivoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, -1));
+        tipoarquivoText.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.add(tipoarquivoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, -1));
 
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("CSV");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        tipoenvioBox.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Separador : ");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
+        tipoenvioBox.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
         separadorText.setBackground(new java.awt.Color(99, 99, 119));
-        jPanel1.add(separadorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 190, -1));
+        separadorText.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.add(separadorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 190, -1));
 
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Nome do tipo documento : ");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 130, 20));
+        tipoenvioBox.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 150, 20));
 
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Nome do tipo processo : ");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, 20));
+        tipoenvioBox.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, 20));
 
         tipodocumentoText.setBackground(new java.awt.Color(99, 99, 119));
         tipodocumentoText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tipodocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 190, -1));
+        tipodocumentoText.setToolTipText("Colocar separador entre os indices");
+        tipoenvioBox.add(tipodocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 190, -1));
 
         tipoprocessoText.setBackground(new java.awt.Color(99, 99, 119));
         tipoprocessoText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(tipoprocessoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 190, -1));
+        tipoenvioBox.add(tipoprocessoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 190, -1));
 
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Modulo de entrada");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, -1, 20));
+        tipoenvioBox.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 80, -1, 20));
 
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Modulo de saida");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, -1, 20));
+        tipoenvioBox.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, -1, 20));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Webcervice" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        moduloentradaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Webcervice" }));
+        moduloentradaBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                moduloentradaBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 80, 90, -1));
+        tipoenvioBox.add(moduloentradaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, 90, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Imagem", "Jucec" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -319,167 +334,179 @@ public class configView extends javax.swing.JFrame {
                 jComboBox2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 90, -1));
+        tipoenvioBox.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 90, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        modulosaidaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
+        modulosaidaBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                modulosaidaBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, 90, -1));
+        tipoenvioBox.add(modulosaidaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 120, 90, -1));
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Modulo do processo");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 160, -1, 20));
+        tipoenvioBox.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, 20));
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("ID Modulo do processo");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 110, 20));
+        tipoenvioBox.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 200, 20));
 
         idmoduloInt.setBackground(new java.awt.Color(99, 99, 119));
         idmoduloInt.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(idmoduloInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 200, 20, -1));
+        tipoenvioBox.add(idmoduloInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 200, 20, -1));
 
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("DEFINIR NOME DO DOCUMENTO");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 160, 20));
+        tipoenvioBox.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 220, 20));
 
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Caixa");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
+        tipoenvioBox.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Protocolo");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 50, 20));
+        tipoenvioBox.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 100, 20));
 
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Lote");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 40, 20));
+        tipoenvioBox.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 40, 20));
 
         nomecaixaText.setBackground(new java.awt.Color(99, 99, 119));
         nomecaixaText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(nomecaixaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 120, -1));
+        tipoenvioBox.add(nomecaixaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 120, -1));
 
         nomeprotocoloText.setBackground(new java.awt.Color(99, 99, 119));
         nomeprotocoloText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(nomeprotocoloText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 120, -1));
+        tipoenvioBox.add(nomeprotocoloText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 120, -1));
 
         nomeloteText.setBackground(new java.awt.Color(99, 99, 119));
         nomeloteText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(nomeloteText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 120, -1));
+        tipoenvioBox.add(nomeloteText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 120, -1));
 
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Webservice siarco");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 90, -1));
+        tipoenvioBox.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 280, -1));
 
         jRadioButton7.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton7.setText("Sim");
-        jPanel1.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, -1, -1));
+        tipoenvioBox.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, -1, -1));
 
         jRadioButton8.setBackground(new java.awt.Color(38, 56, 74));
         jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton8.setText("Não");
-        jPanel1.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 270, -1, -1));
+        tipoenvioBox.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, -1, -1));
 
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("URL do Webservice");
         jLabel28.setToolTipText("");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 100, -1));
+        tipoenvioBox.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 260, -1));
 
         urlwebserviceText1.setBackground(new java.awt.Color(99, 99, 119));
-        jPanel1.add(urlwebserviceText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 190, -1));
+        urlwebserviceText1.setForeground(new java.awt.Color(255, 255, 255));
+        tipoenvioBox.add(urlwebserviceText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 190, -1));
 
         jTextField1.setBackground(new java.awt.Color(99, 99, 119));
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 320, 190, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 340, 0));
+        tipoenvioBox.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 320, 190, -1));
+        tipoenvioBox.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 340, 0));
 
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Numero de coluna no arquivo");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, -1, 20));
+        tipoenvioBox.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, 20));
 
         statusblockchainInt.setBackground(new java.awt.Color(99, 99, 119));
         statusblockchainInt.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(statusblockchainInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, 20, -1));
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 580, -1, -1));
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 190, -1));
+        statusblockchainInt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusblockchainIntActionPerformed(evt);
+            }
+        });
+        tipoenvioBox.add(statusblockchainInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 20, -1));
+        tipoenvioBox.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 580, -1, -1));
+        tipoenvioBox.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 190, -1));
 
         indicedocumentoText.setBackground(new java.awt.Color(99, 99, 119));
         indicedocumentoText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(indicedocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 190, -1));
-
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel31.setText("obs : Colocar separador entre os indices");
-        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 200, 20));
+        tipoenvioBox.add(indicedocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 190, -1));
 
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Campos do Webservice");
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 560, 120, -1));
+        tipoenvioBox.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, 280, -1));
 
         campowebserviceText.setBackground(new java.awt.Color(99, 99, 119));
         campowebserviceText.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(campowebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 580, 190, -1));
-
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("obs : houver mais de um a campo deverão ser separados por - \"traço\"");
-        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, 340, -1));
+        campowebserviceText.setToolTipText("Mais de um campo deverão ser separados por - \"traço\"");
+        campowebserviceText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campowebserviceTextActionPerformed(evt);
+            }
+        });
+        tipoenvioBox.add(campowebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 590, 190, -1));
 
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Insere status na coluna blockChain");
-        jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 170, 20));
+        tipoenvioBox.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 200, 20));
 
-        numerocolunaInt1.setBackground(new java.awt.Color(99, 99, 119));
-        numerocolunaInt1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(numerocolunaInt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 20, -1));
+        numerocolunaInt.setBackground(new java.awt.Color(99, 99, 119));
+        numerocolunaInt.setForeground(new java.awt.Color(255, 255, 255));
+        numerocolunaInt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numerocolunaIntActionPerformed(evt);
+            }
+        });
+        tipoenvioBox.add(numerocolunaInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 20, -1));
 
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Tipo de envio");
-        jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 70, 20));
+        tipoenvioBox.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 130, 20));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        moduloprocessoBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
+        moduloprocessoBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                moduloprocessoBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 160, 90, -1));
+        tipoenvioBox.add(moduloprocessoBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 90, -1));
 
-        jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Exporta properties");
-        jToggleButton1.setOpaque(true);
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 690, -1, 30));
+        jButton1.setText("Exportar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        tipoenvioBox.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1137, Short.MAX_VALUE)
+            .addComponent(tipoenvioBox, javax.swing.GroupLayout.PREFERRED_SIZE, 1127, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(tipoenvioBox, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void senhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTextActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_senhaTextActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void moduloentradaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloentradaBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_moduloentradaBoxActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void modulosaidaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modulosaidaBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_modulosaidaBoxActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
@@ -489,9 +516,132 @@ public class configView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void moduloprocessoBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloprocessoBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_moduloprocessoBoxActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        if (usuarioText.getText() == null || usuarioText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar usuário !");
+            return;
+        } else {
+            if (senhaText.getText() == null || senhaText.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Informar senha !");
+                return;
+            } else {
+                if (caminhocsvText.getText() == null || caminhocsvText.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Informar caminho do CSV !");
+                    return;
+                } else {
+                    if (tipoarquivoText.getText() == null || tipoarquivoText.getText().equals("")) {
+                        JOptionPane.showMessageDialog(null, "Informar o tipo de arquivo !");
+                        return;
+                    } else {    
+                        if (separadorText.getText() == null || separadorText.getText().equals("")) {
+                            JOptionPane.showMessageDialog(null, "Informar separador !");
+                            return;
+                        } else {
+                            if (caminhologText.getText() == null || caminhologText.getText().equals("")) {
+                                JOptionPane.showMessageDialog(null, "Informar caminho do log que será salvo !");
+                                return;
+                            } else {
+                                if (configdigitalizacaoText.getText() == null || configdigitalizacaoText.getText().equals("")) {
+                                    JOptionPane.showMessageDialog(null, "Informar a config digitalização  !");
+                                    return;
+                                } else {
+                                    if (urlwebserviceText1.getText() == null || urlwebserviceText1.getText().equals("")) {
+                                        JOptionPane.showMessageDialog(null, "Informar a url do webservice !");
+                                        return;
+                                    } else {
+                                        if (urlwebserviceText1.getText() == null || urlwebserviceText1.getText().equals("")) {
+                                            JOptionPane.showMessageDialog(null, "Informar a url do webservice !");
+                                            return;
+                                        } else {
+                                            if (tipoprocessoText.getText() == null || tipoprocessoText.getText().equals("")) {
+                                                JOptionPane.showMessageDialog(null, "Informar o tipo de processo !");
+                                                return;
+                                            } else {
+                                                if (tipodocumentoText.getText() == null || tipodocumentoText.getText().equals("")) {
+                                                    JOptionPane.showMessageDialog(null, "Informar o tipo documento !");
+                                                    return;
+                                                } else {
+                                                    if (nomecaixaText.getText() == null || nomecaixaText.getText().equals("")) {
+                                                        JOptionPane.showMessageDialog(null, "Informar o nome da caixa !");
+                                                        return;
+                                                    } else {
+                                                        if (nomeprotocoloText.getText() == null || nomeprotocoloText.getText().equals("")) {
+                                                            JOptionPane.showMessageDialog(null, "Informar o nome protocolo !");
+                                                            return;
+                                                        } else {
+                                                            if (nomeloteText.getText() == null || nomeloteText.getText().equals("")) {
+                                                                JOptionPane.showMessageDialog(null, "Informar o nome do lote !");
+                                                                return;
+                                                            } else {
+                                                                if (numerocolunaInt.getText() == null || numerocolunaInt.getText().equals("")) {
+                                                                    JOptionPane.showMessageDialog(null, "Informar o numero de coluna  !");
+                                                                    return;
+                                                                } else {
+                                                                    if (statusblockchainInt.getText() == null || statusblockchainInt.getText().equals("")) {
+                                                                        JOptionPane.showMessageDialog(null, "Informar o status do block chain  !");
+                                                                        return;
+                                                                    } else {
+                                                                        if (campowebserviceText.getText() == null || campowebserviceText.getText().equals("")) {
+                                                                            JOptionPane.showMessageDialog(null, "Informar os campos do webservice  !");
+                                                                            return;
+                                                                        } else {
+                                                                             if (campowebserviceText.getText() == null || campowebserviceText.getText().equals("")) {
+                                                                            JOptionPane.showMessageDialog(null, "Informar os campos do webservice  !");
+                                                                            return;
+                                                                             }else {
+                                                                                 if (modulosaidaBox.getSelectedItem().equals("Selecione ...")){
+                                                                                     JOptionPane.showMessageDialog(null, "Selecione uma opção !");
+                                                                                 }else {
+                                                                                     if (moduloentradaBox.getSelectedItem().equals("Selecione ...")){
+                                                                                     JOptionPane.showMessageDialog(null, "Selecione uma opção !");
+                                                                                 }else {
+                                                                                         
+                                                                                     }
+                                                                                         
+                                                                             }
+                                                                            
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+                                                            
+                                                        
+                                                        
+    private void usuarioTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTextActionPerformed
+
+    }//GEN-LAST:event_usuarioTextActionPerformed
+
+    private void campowebserviceTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campowebserviceTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campowebserviceTextActionPerformed
+
+    private void numerocolunaIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numerocolunaIntActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numerocolunaIntActionPerformed
+
+    private void statusblockchainIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusblockchainIntActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusblockchainIntActionPerformed
 
     /**
      * @param args the command line arguments
@@ -538,10 +688,8 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JTextField configdigitalizacaoText;
     private javax.swing.JTextField idmoduloInt;
     private javax.swing.JTextField indicedocumentoText;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
@@ -568,9 +716,7 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
@@ -584,7 +730,6 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
@@ -597,16 +742,19 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JComboBox moduloentradaBox;
+    private javax.swing.JComboBox moduloprocessoBox;
+    private javax.swing.JComboBox modulosaidaBox;
     private javax.swing.JTextField nomecaixaText;
     private javax.swing.JTextField nomeloteText;
     private javax.swing.JTextField nomeprotocoloText;
-    private javax.swing.JTextField numerocolunaInt1;
+    private javax.swing.JTextField numerocolunaInt;
     private javax.swing.JTextField senhaText;
     private javax.swing.JTextField separadorText;
     private javax.swing.JTextField statusblockchainInt;
     private javax.swing.JTextField tipoarquivoText;
     private javax.swing.JTextField tipodocumentoText;
+    private javax.swing.JPanel tipoenvioBox;
     private javax.swing.JTextField tipoprocessoText;
     private javax.swing.JTextField urlwebserviceText1;
     private javax.swing.JTextField usuarioText;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tci.importacao.rules;
+package tci.importacao.bean;
 
 /**
  *
@@ -30,6 +30,42 @@ public class ConfigBean {
     private Integer statusblockchainInt;
     private String campowebserviceText;
     private String indicedocumentoText;
+    private String moduloentradaBox;
+    private String modulosaidaBox;
+    private String moduloprocessoBox;
+    private String tipodenvioBox;
+
+    public String getModuloentradaBox() {
+        return moduloentradaBox;
+    }
+
+    public void setModuloentradaBox(String moduloentradaBox) {
+        this.moduloentradaBox = moduloentradaBox;
+    }
+
+    public String getModulosaidaBox() {
+        return modulosaidaBox;
+    }
+
+    public void setModulosaidaBox(String modulosaidaBox) {
+        this.modulosaidaBox = modulosaidaBox;
+    }
+
+    public String getModuloprocessoBox() {
+        return moduloprocessoBox;
+    }
+
+    public void setModuloprocessoBox(String moduloprocessoBox) {
+        this.moduloprocessoBox = moduloprocessoBox;
+    }
+
+    public String getTipodenvioBox() {
+        return tipodenvioBox;
+    }
+
+    public void setTipodenvioBox(String tipodenvioBox) {
+        this.tipodenvioBox = tipodenvioBox;
+    }
 
     public String getUsuarioText() {
         return usuarioText;
