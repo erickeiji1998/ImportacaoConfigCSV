@@ -34,6 +34,87 @@ public class ConfigBean {
     private String modulosaidaBox;
     private String moduloprocessoBox;
     private String tipodenvioBox;
+    private Boolean appendsSelect;
+    private Boolean appendnSelect;
+    private Boolean metaSelect;
+    private Boolean metaimgSelect;
+    private Boolean cabecalhosSelect;
+    private Boolean cabecalhonSelect;
+    private String urlsiarcoText;
+    private Boolean siarconSelect;
+    private Boolean siarcosSelect;
+
+    public String getUrlsiarcoText() {
+        return urlsiarcoText;
+    }
+
+    public void setUrlsiarcoText(String urlsiarcoText) {
+        this.urlsiarcoText = urlsiarcoText;
+    }
+
+    public Boolean getSiarconSelect() {
+        return siarconSelect;
+    }
+
+    public void setSiarconSelect(Boolean siarconSelect) {
+        this.siarconSelect = siarconSelect;
+    }
+
+    public Boolean getSiarcosSelect() {
+        return siarcosSelect;
+    }
+
+    public void setSiarcosSelect(Boolean siarcosSelect) {
+        this.siarcosSelect = siarcosSelect;
+    }
+
+    public Boolean getCabecalhosSelect() {
+        return cabecalhosSelect;
+    }
+
+    public void setCabecalhosSelect(Boolean cabecalhosSelect) {
+        this.cabecalhosSelect = cabecalhosSelect;
+    }
+
+    public Boolean getCabecalhonSelect() {
+        return cabecalhonSelect;
+    }
+
+    public void setCabecalhonSelect(Boolean cabecalhonSelect) {
+        this.cabecalhonSelect = cabecalhonSelect;
+    }
+
+    public Boolean getMetaSelect() {
+        return metaSelect;
+    }
+
+    public void setMetaSelect(Boolean metaSelect) {
+        this.metaSelect = metaSelect;
+    }
+
+    public Boolean getMetaimgSelect() {
+        return metaimgSelect;
+    }
+
+    public void setMetaimgSelect(Boolean metaimgSelect) {
+        this.metaimgSelect = metaimgSelect;
+    }
+
+    public Boolean getAppendsSelect() {
+        return appendsSelect;
+    }
+
+    public void setAppendsSelect(Boolean appendsSelect) {
+        this.appendsSelect = appendsSelect;
+    }
+
+    public Boolean getAppendnSelect() {
+        return appendnSelect;
+    }
+
+    public void setAppendnSelect(Boolean appendnSelect) {
+        this.appendnSelect = appendnSelect;
+    }
 
     public String getModuloentradaBox() {
         return moduloentradaBox;
@@ -148,10 +229,12 @@ public class ConfigBean {
     }
 
     public Integer getIdmoduloInt() {
+
         return idmoduloInt;
     }
 
     public void setIdmoduloInt(Integer idmoduloInt) {
+
         this.idmoduloInt = idmoduloInt;
     }
 
@@ -192,7 +275,9 @@ public class ConfigBean {
     }
 
     public void setNumerocolunaInt(Integer numerocolunaInt) {
+
         this.numerocolunaInt = numerocolunaInt;
+
     }
 
     public Integer getStatusblockchainInt() {

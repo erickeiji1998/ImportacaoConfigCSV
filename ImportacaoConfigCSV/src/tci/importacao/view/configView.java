@@ -7,12 +7,15 @@ package tci.importacao.view;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import tci.importacao.bean.ConfigBean;
 
 /**
  *
  * @author erick.nagano
  */
 public class configView extends javax.swing.JFrame {
+
+    ConfigBean configBean = new ConfigBean();
 
     /**
      * Creates new form configView
@@ -42,7 +45,8 @@ public class configView extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
         jTextField4 = new javax.swing.JTextField();
-        tipoenvioBox = new javax.swing.JPanel();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        panel = new javax.swing.JPanel();
         usuarioText = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         senhaText = new javax.swing.JTextField();
@@ -58,14 +62,14 @@ public class configView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        metaSelect = new javax.swing.JRadioButton();
+        metaimgSelect = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        cabecalhosSelect = new javax.swing.JRadioButton();
+        cabecalhonSelect = new javax.swing.JRadioButton();
         jLabel12 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        appendsSelect = new javax.swing.JRadioButton();
+        appendnSelect = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         tipoarquivoText = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -78,7 +82,7 @@ public class configView extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         moduloentradaBox = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
+        tipoenvioBox = new javax.swing.JComboBox();
         modulosaidaBox = new javax.swing.JComboBox();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -91,11 +95,11 @@ public class configView extends javax.swing.JFrame {
         nomeprotocoloText = new javax.swing.JTextField();
         nomeloteText = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
+        siarcosSelect = new javax.swing.JRadioButton();
+        siarconSelect = new javax.swing.JRadioButton();
         jLabel28 = new javax.swing.JLabel();
-        urlwebserviceText1 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        urlwebserviceText = new javax.swing.JTextField();
+        urlsiarcoText = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         statusblockchainInt = new javax.swing.JTextField();
@@ -153,13 +157,13 @@ public class configView extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1127, 662));
 
-        tipoenvioBox.setBackground(new java.awt.Color(38, 56, 74));
-        tipoenvioBox.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.setMaximumSize(new java.awt.Dimension(1127, 662));
-        tipoenvioBox.setMinimumSize(new java.awt.Dimension(1127, 662));
-        tipoenvioBox.setName(""); // NOI18N
-        tipoenvioBox.setPreferredSize(new java.awt.Dimension(1127, 662));
-        tipoenvioBox.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel.setBackground(new java.awt.Color(38, 56, 74));
+        panel.setForeground(new java.awt.Color(255, 255, 255));
+        panel.setMaximumSize(new java.awt.Dimension(1127, 662));
+        panel.setMinimumSize(new java.awt.Dimension(1127, 662));
+        panel.setName(""); // NOI18N
+        panel.setPreferredSize(new java.awt.Dimension(1127, 662));
+        panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usuarioText.setBackground(new java.awt.Color(99, 99, 119));
         usuarioText.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,12 +172,12 @@ public class configView extends javax.swing.JFrame {
                 usuarioTextActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 190, -1));
+        panel.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 190, -1));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuário :");
         jLabel1.setToolTipText("Infome o usuário do Webservice");
-        tipoenvioBox.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 50, 20));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 50, 20));
 
         senhaText.setBackground(new java.awt.Color(99, 99, 119));
         senhaText.setForeground(new java.awt.Color(255, 255, 255));
@@ -182,143 +186,153 @@ public class configView extends javax.swing.JFrame {
                 senhaTextActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(senhaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 190, -1));
+        panel.add(senhaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 190, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Senha : ");
-        tipoenvioBox.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 20));
-        tipoenvioBox.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 10, -1, -1));
+        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 20));
+        panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 10, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 51, 204));
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("LOGIN WEBSERVICE CONTENT");
-        tipoenvioBox.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 180, 20));
+        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 180, 20));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Caminho : ");
         jLabel5.setToolTipText("");
-        tipoenvioBox.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 60, 20));
+        panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 60, 20));
 
         caminhocsvText.setBackground(new java.awt.Color(99, 99, 119));
         caminhocsvText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(caminhocsvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 190, -1));
+        panel.add(caminhocsvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 190, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Caminho do arquivo LOG");
-        tipoenvioBox.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 260, -1));
+        panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 260, -1));
 
         caminhologText.setBackground(new java.awt.Color(99, 99, 119));
         caminhologText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(caminhologText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 190, -1));
+        panel.add(caminhologText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 190, -1));
 
         configdigitalizacaoText.setBackground(new java.awt.Color(99, 99, 119));
         configdigitalizacaoText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(configdigitalizacaoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 190, -1));
+        panel.add(configdigitalizacaoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 190, -1));
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nome da ConfigDigitalizacao");
-        tipoenvioBox.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 260, -1));
+        panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 260, -1));
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("URL do Webservice siarco");
         jLabel8.setToolTipText("");
-        tipoenvioBox.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, 280, -1));
+        panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, 280, -1));
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Indice do documento : ");
-        tipoenvioBox.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, 20));
+        panel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, 20));
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Metadados");
-        tipoenvioBox.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 70, -1));
+        panel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 70, -1));
 
-        jRadioButton1.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Metadados");
-        tipoenvioBox.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
+        metaSelect.setBackground(new java.awt.Color(38, 56, 74));
+        metaSelect.setForeground(new java.awt.Color(255, 255, 255));
+        metaSelect.setText("Metadados");
+        panel.add(metaSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Metadados com imagem");
-        tipoenvioBox.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 180, -1));
+        metaimgSelect.setBackground(new java.awt.Color(38, 56, 74));
+        metaimgSelect.setForeground(new java.awt.Color(255, 255, 255));
+        metaimgSelect.setText("Metadados com imagem");
+        metaimgSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                metaimgSelectActionPerformed(evt);
+            }
+        });
+        panel.add(metaimgSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 180, -1));
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Cabeçalho");
-        tipoenvioBox.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
+        panel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, -1, -1));
 
-        jRadioButton3.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("Sim");
-        tipoenvioBox.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
+        cabecalhosSelect.setBackground(new java.awt.Color(38, 56, 74));
+        cabecalhosSelect.setForeground(new java.awt.Color(255, 255, 255));
+        cabecalhosSelect.setText("Sim");
+        panel.add(cabecalhosSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
 
-        jRadioButton4.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton4.setText("Não");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        cabecalhonSelect.setBackground(new java.awt.Color(38, 56, 74));
+        cabecalhonSelect.setForeground(new java.awt.Color(255, 255, 255));
+        cabecalhonSelect.setText("Não");
+        cabecalhonSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                cabecalhonSelectActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, -1, -1));
+        panel.add(cabecalhonSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, -1, -1));
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Append de arquivo");
-        tipoenvioBox.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 230, -1));
+        panel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 230, -1));
 
-        jRadioButton5.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton5.setText("Sim");
-        tipoenvioBox.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        appendsSelect.setBackground(new java.awt.Color(38, 56, 74));
+        appendsSelect.setForeground(new java.awt.Color(255, 255, 255));
+        appendsSelect.setText("Sim");
+        panel.add(appendsSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
-        jRadioButton6.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton6.setText("Não");
-        tipoenvioBox.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
+        appendnSelect.setBackground(new java.awt.Color(38, 56, 74));
+        appendnSelect.setForeground(new java.awt.Color(255, 255, 255));
+        appendnSelect.setText("Não");
+        appendnSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                appendnSelectActionPerformed(evt);
+            }
+        });
+        panel.add(appendnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Tipo arquivo : ");
-        tipoenvioBox.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 80, 20));
+        panel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 80, 20));
 
         tipoarquivoText.setBackground(new java.awt.Color(99, 99, 119));
         tipoarquivoText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(tipoarquivoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, -1));
+        panel.add(tipoarquivoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, -1));
 
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("CSV");
-        tipoenvioBox.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        panel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Separador : ");
-        tipoenvioBox.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
+        panel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
         separadorText.setBackground(new java.awt.Color(99, 99, 119));
         separadorText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(separadorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 190, -1));
+        panel.add(separadorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 190, -1));
 
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Nome do tipo documento : ");
-        tipoenvioBox.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 150, 20));
+        panel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 160, 20));
 
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Nome do tipo processo : ");
-        tipoenvioBox.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, 20));
+        panel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, 20));
 
         tipodocumentoText.setBackground(new java.awt.Color(99, 99, 119));
         tipodocumentoText.setForeground(new java.awt.Color(255, 255, 255));
         tipodocumentoText.setToolTipText("Colocar separador entre os indices");
-        tipoenvioBox.add(tipodocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 190, -1));
+        panel.add(tipodocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 190, -1));
 
         tipoprocessoText.setBackground(new java.awt.Color(99, 99, 119));
         tipoprocessoText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(tipoprocessoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 190, -1));
+        panel.add(tipoprocessoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 190, -1));
 
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Modulo de entrada");
-        tipoenvioBox.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 80, -1, 20));
+        panel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 80, -1, 20));
 
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Modulo de saida");
-        tipoenvioBox.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, -1, 20));
+        panel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, -1, 20));
 
         moduloentradaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Webcervice" }));
         moduloentradaBox.addActionListener(new java.awt.event.ActionListener() {
@@ -326,15 +340,15 @@ public class configView extends javax.swing.JFrame {
                 moduloentradaBoxActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(moduloentradaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, 90, -1));
+        panel.add(moduloentradaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, 100, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Imagem", "Jucec" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        tipoenvioBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Imagem", "Jucec" }));
+        tipoenvioBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                tipoenvioBoxActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 90, -1));
+        panel.add(tipoenvioBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 90, -1));
 
         modulosaidaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
         modulosaidaBox.addActionListener(new java.awt.event.ActionListener() {
@@ -342,79 +356,84 @@ public class configView extends javax.swing.JFrame {
                 modulosaidaBoxActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(modulosaidaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 120, 90, -1));
+        panel.add(modulosaidaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 120, 100, -1));
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Modulo do processo");
-        tipoenvioBox.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, 20));
+        panel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, 20));
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("ID Modulo do processo");
-        tipoenvioBox.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 200, 20));
+        panel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 200, 20));
 
         idmoduloInt.setBackground(new java.awt.Color(99, 99, 119));
         idmoduloInt.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(idmoduloInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 200, 20, -1));
+        idmoduloInt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idmoduloIntActionPerformed(evt);
+            }
+        });
+        panel.add(idmoduloInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 200, 30, -1));
 
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("DEFINIR NOME DO DOCUMENTO");
-        tipoenvioBox.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 220, 20));
+        panel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 220, 20));
 
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Caixa");
-        tipoenvioBox.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+        panel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Protocolo");
-        tipoenvioBox.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 100, 20));
+        panel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 100, 20));
 
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Lote");
-        tipoenvioBox.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 40, 20));
+        panel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 40, 20));
 
         nomecaixaText.setBackground(new java.awt.Color(99, 99, 119));
         nomecaixaText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(nomecaixaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 120, -1));
+        panel.add(nomecaixaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 120, -1));
 
         nomeprotocoloText.setBackground(new java.awt.Color(99, 99, 119));
         nomeprotocoloText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(nomeprotocoloText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 120, -1));
+        panel.add(nomeprotocoloText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 120, -1));
 
         nomeloteText.setBackground(new java.awt.Color(99, 99, 119));
         nomeloteText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(nomeloteText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 120, -1));
+        panel.add(nomeloteText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 120, -1));
 
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Webservice siarco");
-        tipoenvioBox.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 280, -1));
+        panel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 280, -1));
 
-        jRadioButton7.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton7.setText("Sim");
-        tipoenvioBox.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, -1, -1));
+        siarcosSelect.setBackground(new java.awt.Color(38, 56, 74));
+        siarcosSelect.setForeground(new java.awt.Color(255, 255, 255));
+        siarcosSelect.setText("Sim");
+        panel.add(siarcosSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, -1, -1));
 
-        jRadioButton8.setBackground(new java.awt.Color(38, 56, 74));
-        jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton8.setText("Não");
-        tipoenvioBox.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, -1, -1));
+        siarconSelect.setBackground(new java.awt.Color(38, 56, 74));
+        siarconSelect.setForeground(new java.awt.Color(255, 255, 255));
+        siarconSelect.setText("Não");
+        panel.add(siarconSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, -1, -1));
 
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("URL do Webservice");
         jLabel28.setToolTipText("");
-        tipoenvioBox.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 260, -1));
+        panel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 260, -1));
 
-        urlwebserviceText1.setBackground(new java.awt.Color(99, 99, 119));
-        urlwebserviceText1.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(urlwebserviceText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 190, -1));
+        urlwebserviceText.setBackground(new java.awt.Color(99, 99, 119));
+        urlwebserviceText.setForeground(new java.awt.Color(255, 255, 255));
+        panel.add(urlwebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 190, -1));
 
-        jTextField1.setBackground(new java.awt.Color(99, 99, 119));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 320, 190, -1));
-        tipoenvioBox.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 340, 0));
+        urlsiarcoText.setBackground(new java.awt.Color(99, 99, 119));
+        urlsiarcoText.setForeground(new java.awt.Color(255, 255, 255));
+        panel.add(urlsiarcoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 320, 190, -1));
+        panel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 340, 0));
 
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Numero de coluna no arquivo");
-        tipoenvioBox.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, 20));
+        panel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, 20));
 
         statusblockchainInt.setBackground(new java.awt.Color(99, 99, 119));
         statusblockchainInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,17 +442,17 @@ public class configView extends javax.swing.JFrame {
                 statusblockchainIntActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(statusblockchainInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 20, -1));
-        tipoenvioBox.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 580, -1, -1));
-        tipoenvioBox.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 190, -1));
+        panel.add(statusblockchainInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 20, -1));
+        panel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 580, -1, -1));
+        panel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 190, -1));
 
         indicedocumentoText.setBackground(new java.awt.Color(99, 99, 119));
         indicedocumentoText.setForeground(new java.awt.Color(255, 255, 255));
-        tipoenvioBox.add(indicedocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 190, -1));
+        panel.add(indicedocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 190, -1));
 
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Campos do Webservice");
-        tipoenvioBox.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, 280, -1));
+        panel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, 280, -1));
 
         campowebserviceText.setBackground(new java.awt.Color(99, 99, 119));
         campowebserviceText.setForeground(new java.awt.Color(255, 255, 255));
@@ -443,11 +462,11 @@ public class configView extends javax.swing.JFrame {
                 campowebserviceTextActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(campowebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 590, 190, -1));
+        panel.add(campowebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 590, 190, -1));
 
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Insere status na coluna blockChain");
-        tipoenvioBox.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 200, 20));
+        panel.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 200, 20));
 
         numerocolunaInt.setBackground(new java.awt.Color(99, 99, 119));
         numerocolunaInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -456,11 +475,11 @@ public class configView extends javax.swing.JFrame {
                 numerocolunaIntActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(numerocolunaInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 20, -1));
+        panel.add(numerocolunaInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 20, -1));
 
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Tipo de envio");
-        tipoenvioBox.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 130, 20));
+        panel.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 130, 20));
 
         moduloprocessoBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
         moduloprocessoBox.addActionListener(new java.awt.event.ActionListener() {
@@ -468,7 +487,7 @@ public class configView extends javax.swing.JFrame {
                 moduloprocessoBoxActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(moduloprocessoBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 90, -1));
+        panel.add(moduloprocessoBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 100, -1));
 
         jButton1.setText("Exportar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -476,48 +495,57 @@ public class configView extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        tipoenvioBox.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
+        panel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tipoenvioBox, javax.swing.GroupLayout.PREFERRED_SIZE, 1127, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1127, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tipoenvioBox, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void senhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTextActionPerformed
-        
+
     }//GEN-LAST:event_senhaTextActionPerformed
 
     private void moduloentradaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloentradaBoxActionPerformed
-        // TODO add your handling code here:
+
+        configBean.setModuloentradaBox(moduloentradaBox.getSelectedItem().toString());
+
     }//GEN-LAST:event_moduloentradaBoxActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    private void tipoenvioBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoenvioBoxActionPerformed
+
+        configBean.setTipodenvioBox(tipoenvioBox.getSelectedItem().toString());
+
+    }//GEN-LAST:event_tipoenvioBoxActionPerformed
 
     private void modulosaidaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modulosaidaBoxActionPerformed
-        // TODO add your handling code here:
+
+        configBean.setModulosaidaBox(modulosaidaBox.getSelectedItem().toString());
+
+
     }//GEN-LAST:event_modulosaidaBoxActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void cabecalhonSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabecalhonSelectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_cabecalhonSelectActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void moduloprocessoBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloprocessoBoxActionPerformed
-        // TODO add your handling code here:
+        
+        configBean.setModuloprocessoBox(moduloprocessoBox.getSelectedItem().toString());
+        
     }//GEN-LAST:event_moduloprocessoBoxActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -525,108 +553,240 @@ public class configView extends javax.swing.JFrame {
         if (usuarioText.getText() == null || usuarioText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Informar usuário !");
             return;
+
         } else {
-            if (senhaText.getText() == null || senhaText.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Informar senha !");
-                return;
-            } else {
-                if (caminhocsvText.getText() == null || caminhocsvText.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Informar caminho do CSV !");
-                    return;
-                } else {
-                    if (tipoarquivoText.getText() == null || tipoarquivoText.getText().equals("")) {
-                        JOptionPane.showMessageDialog(null, "Informar o tipo de arquivo !");
-                        return;
-                    } else {    
-                        if (separadorText.getText() == null || separadorText.getText().equals("")) {
-                            JOptionPane.showMessageDialog(null, "Informar separador !");
-                            return;
-                        } else {
-                            if (caminhologText.getText() == null || caminhologText.getText().equals("")) {
-                                JOptionPane.showMessageDialog(null, "Informar caminho do log que será salvo !");
-                                return;
-                            } else {
-                                if (configdigitalizacaoText.getText() == null || configdigitalizacaoText.getText().equals("")) {
-                                    JOptionPane.showMessageDialog(null, "Informar a config digitalização  !");
-                                    return;
-                                } else {
-                                    if (urlwebserviceText1.getText() == null || urlwebserviceText1.getText().equals("")) {
-                                        JOptionPane.showMessageDialog(null, "Informar a url do webservice !");
-                                        return;
-                                    } else {
-                                        if (urlwebserviceText1.getText() == null || urlwebserviceText1.getText().equals("")) {
-                                            JOptionPane.showMessageDialog(null, "Informar a url do webservice !");
-                                            return;
-                                        } else {
-                                            if (tipoprocessoText.getText() == null || tipoprocessoText.getText().equals("")) {
-                                                JOptionPane.showMessageDialog(null, "Informar o tipo de processo !");
-                                                return;
-                                            } else {
-                                                if (tipodocumentoText.getText() == null || tipodocumentoText.getText().equals("")) {
-                                                    JOptionPane.showMessageDialog(null, "Informar o tipo documento !");
-                                                    return;
-                                                } else {
-                                                    if (nomecaixaText.getText() == null || nomecaixaText.getText().equals("")) {
-                                                        JOptionPane.showMessageDialog(null, "Informar o nome da caixa !");
-                                                        return;
-                                                    } else {
-                                                        if (nomeprotocoloText.getText() == null || nomeprotocoloText.getText().equals("")) {
-                                                            JOptionPane.showMessageDialog(null, "Informar o nome protocolo !");
-                                                            return;
-                                                        } else {
-                                                            if (nomeloteText.getText() == null || nomeloteText.getText().equals("")) {
-                                                                JOptionPane.showMessageDialog(null, "Informar o nome do lote !");
-                                                                return;
-                                                            } else {
-                                                                if (numerocolunaInt.getText() == null || numerocolunaInt.getText().equals("")) {
-                                                                    JOptionPane.showMessageDialog(null, "Informar o numero de coluna  !");
-                                                                    return;
-                                                                } else {
-                                                                    if (statusblockchainInt.getText() == null || statusblockchainInt.getText().equals("")) {
-                                                                        JOptionPane.showMessageDialog(null, "Informar o status do block chain  !");
-                                                                        return;
-                                                                    } else {
-                                                                        if (campowebserviceText.getText() == null || campowebserviceText.getText().equals("")) {
-                                                                            JOptionPane.showMessageDialog(null, "Informar os campos do webservice  !");
-                                                                            return;
-                                                                        } else {
-                                                                             if (campowebserviceText.getText() == null || campowebserviceText.getText().equals("")) {
-                                                                            JOptionPane.showMessageDialog(null, "Informar os campos do webservice  !");
-                                                                            return;
-                                                                             }else {
-                                                                                 if (modulosaidaBox.getSelectedItem().equals("Selecione ...")){
-                                                                                     JOptionPane.showMessageDialog(null, "Selecione uma opção !");
-                                                                                 }else {
-                                                                                     if (moduloentradaBox.getSelectedItem().equals("Selecione ...")){
-                                                                                     JOptionPane.showMessageDialog(null, "Selecione uma opção !");
-                                                                                 }else {
-                                                                                         
-                                                                                     }
-                                                                                         
-                                                                             }
-                                                                            
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    
-                }
-            }
+
+            configBean.setUsuarioText(usuarioText.getText());
         }
+
+        if (senhaText.getText() == null || senhaText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar senha !");
+            return;
+
+        } else {
+
+            configBean.setSenhaText(senhaText.getText());
+        }
+
+        if (caminhocsvText.getText() == null || caminhocsvText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar caminho do CSV !");
+            return;
+
+        } else {
+
+            configBean.setCaminhocsvText(caminhocsvText.getText());
+
+        }
+
+        if (tipoarquivoText.getText() == null || tipoarquivoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o tipo de arquivo !");
+            return;
+
+        } else {
+
+            configBean.setTipoarquivoText(tipoarquivoText.getText());
+
+        }
+
+        if (separadorText.getText() == null || separadorText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar separador !");
+            return;
+
+        } else {
+
+            configBean.setSeparadorText(separadorText.getText());
+
+        }
+
+        if (caminhologText.getText() == null || caminhologText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar caminho do log que será salvo !");
+            return;
+
+        } else {
+
+            configBean.setCaminhologText(caminhologText.getText());
+
+        }
+
+        if (configdigitalizacaoText.getText() == null || configdigitalizacaoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar a config digitalização  !");
+            return;
+
+        } else {
+
+            configBean.setConfigdigitalizacaoText(configdigitalizacaoText.getText());
+
+        }
+
+        if (urlwebserviceText.getText() == null || urlwebserviceText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar a url do webservice !");
+            return;
+
+        } else {
+
+            configBean.setUrlwebserviceText(urlwebserviceText.getText());
+
+        }
+
+        if (tipoprocessoText.getText() == null || tipoprocessoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o tipo de processo !");
+            return;
+        } else {
+
+            configBean.setTipoprocessoText(tipoprocessoText.getText());
+
+        }
+
+        if (tipodocumentoText.getText() == null || tipodocumentoText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o tipo documento !");
+            return;
+        } else {
+
+            configBean.setTipodocumentoText(tipodocumentoText.getText());
+
+        }
+
+        if (nomecaixaText.getText() == null || nomecaixaText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o nome da caixa !");
+            return;
+        } else {
+
+            configBean.setNomecaixaText(nomecaixaText.getText());
+
+        }
+
+        if (nomeprotocoloText.getText() == null || nomeprotocoloText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o nome protocolo !");
+            return;
+        } else {
+
+            configBean.setNomeprotocoloText(nomeprotocoloText.getText());
+
+        }
+
+        if (nomeloteText.getText() == null || nomeloteText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o nome do lote !");
+            return;
+        } else {
+
+            configBean.setNomeloteText(nomeloteText.getText());
+
+        }
+
+        if (numerocolunaInt.getText() == null || numerocolunaInt.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o numero de coluna  !");
+            return;
+        } else {
+
+            configBean.setNumerocolunaInt(Integer.valueOf(numerocolunaInt.getText()));
+
+        }
+
+        if (statusblockchainInt.getText() == null || statusblockchainInt.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o status do block chain  !");
+            return;
+        } else {
+
+            configBean.setStatusblockchainInt(Integer.valueOf(statusblockchainInt.getText()));
+
+        }
+
+        if (campowebserviceText.getText() == null || campowebserviceText.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar os campos do webservice  !");
+            return;
+        } else {
+
+            configBean.setCampowebserviceText(campowebserviceText.getText());
+
+        }
+
+        if (appendsSelect.isSelected() == true) {
+
+            configBean.setAppendsSelect(appendsSelect.isSelected());
+
+        } else {
+
+            configBean.setMetaSelect(metaSelect.isSelected());
+
+        }
+
+        if (metaSelect.isSelected() == true) {
+
+            configBean.setMetaSelect(metaSelect.isSelected());
+
+        } else {
+
+            configBean.setMetaimgSelect(metaimgSelect.isSelected());
+
+        }
+
+        if (cabecalhosSelect.isSelected() == true) {
+
+            configBean.setMetaSelect(cabecalhosSelect.isSelected());
+
+        } else {
+
+            configBean.setCabecalhonSelect(cabecalhosSelect.isSelected());
+
+        }
+
+        if (moduloentradaBox.getSelectedItem().equals("Selecione ...")) {
+
+            //Selecione ..., CQ, Indexer, OCR, Content
+            JOptionPane.showMessageDialog(null, "Selecione o modulo do entrada !");
+            return;
+
+        }
+
+        if (modulosaidaBox.getSelectedItem().equals("Selecione ...")) {
+
+            //Selecione ..., CQ, Indexer, OCR, Content
+            JOptionPane.showMessageDialog(null, "Selecione o modulo de saida !");
+            return;
+
+        }
+
+        if (moduloprocessoBox.getSelectedItem().equals("Selecione ...")) {
+
+            //Selecione ..., CQ, Indexer, OCR, Content
+            JOptionPane.showMessageDialog(null, "Selecione o modulo do processo !");
+            return;
+
+        }
+        if (idmoduloInt.getText() == null || idmoduloInt.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informar o ID modulo do processo  !");
+            return;
+        } else {
+
+            configBean.setIdmoduloInt(Integer.valueOf(idmoduloInt.getText()));
+
+        }
+        
+        if (siarcosSelect.isSelected() == true ){
+            
+            configBean.setSiarcosSelect(siarcosSelect.isSelected());
+            
+        }else {
+            
+            configBean.setSiarconSelect(siarconSelect.isSelected());
+            
+        }
+        
+        if (urlsiarcoText.getText() == null || urlsiarcoText.getText().equals ("")){
+            
+            JOptionPane.showMessageDialog(null, "Informar a url do webservice siarco  !");
+            
+        }else{
+            
+            configBean.setUrlsiarcoText(urlsiarcoText.getText());
+            
+        }
+        
+      
+
     }//GEN-LAST:event_jButton1ActionPerformed
-                                                            
-                                                        
-                                                        
+
+
     private void usuarioTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTextActionPerformed
 
     }//GEN-LAST:event_usuarioTextActionPerformed
@@ -643,6 +803,18 @@ public class configView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_statusblockchainIntActionPerformed
 
+    private void appendnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appendnSelectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_appendnSelectActionPerformed
+
+    private void metaimgSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metaimgSelectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_metaimgSelectActionPerformed
+
+    private void idmoduloIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idmoduloIntActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idmoduloIntActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -657,16 +829,21 @@ public class configView extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(configView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(configView.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(configView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(configView.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(configView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(configView.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(configView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(configView.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -679,9 +856,14 @@ public class configView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton appendnSelect;
+    private javax.swing.JRadioButton appendsSelect;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JRadioButton cabecalhonSelect;
+    private javax.swing.JRadioButton cabecalhosSelect;
     private javax.swing.JTextField caminhocsvText;
     private javax.swing.JTextField caminhologText;
     private javax.swing.JTextField campowebserviceText;
@@ -689,7 +871,6 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JTextField idmoduloInt;
     private javax.swing.JTextField indicedocumentoText;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
@@ -731,17 +912,10 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JRadioButton metaSelect;
+    private javax.swing.JRadioButton metaimgSelect;
     private javax.swing.JComboBox moduloentradaBox;
     private javax.swing.JComboBox moduloprocessoBox;
     private javax.swing.JComboBox modulosaidaBox;
@@ -749,14 +923,18 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JTextField nomeloteText;
     private javax.swing.JTextField nomeprotocoloText;
     private javax.swing.JTextField numerocolunaInt;
+    private javax.swing.JPanel panel;
     private javax.swing.JTextField senhaText;
     private javax.swing.JTextField separadorText;
+    private javax.swing.JRadioButton siarconSelect;
+    private javax.swing.JRadioButton siarcosSelect;
     private javax.swing.JTextField statusblockchainInt;
     private javax.swing.JTextField tipoarquivoText;
     private javax.swing.JTextField tipodocumentoText;
-    private javax.swing.JPanel tipoenvioBox;
+    private javax.swing.JComboBox tipoenvioBox;
     private javax.swing.JTextField tipoprocessoText;
-    private javax.swing.JTextField urlwebserviceText1;
+    private javax.swing.JTextField urlsiarcoText;
+    private javax.swing.JTextField urlwebserviceText;
     private javax.swing.JTextField usuarioText;
     // End of variables declaration//GEN-END:variables
 }
