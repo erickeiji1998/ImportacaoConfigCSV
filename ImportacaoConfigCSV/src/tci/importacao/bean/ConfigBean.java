@@ -23,7 +23,7 @@ public class ConfigBean {
     private String tipodocumentoText;
     private Integer idmoduloInt;
     private String nomecaixaText;
-    private String nomeprotocoloText;
+    private String nomeProcessoText;
     private String nomeloteText;
     private String numerocolunaText;
     private Integer numerocolunaInt;
@@ -43,6 +43,53 @@ public class ConfigBean {
     private String urlsiarcoText;
     private Boolean siarconSelect;
     private Boolean siarcosSelect;
+    private String nomeDocumentoText;
+    private String indiceImagem;
+    private String saidaProperties;
+
+    private Boolean comCsvSelect;
+    private Boolean pastaImagemSelect;
+    private Boolean indiceImagemSelect;
+
+    public Boolean getComCsvSelect() {
+        return comCsvSelect;
+    }
+
+    public void setComCsvSelect(Boolean comCsvSelect) {
+        this.comCsvSelect = comCsvSelect;
+    }
+
+    public Boolean getPastaImagemSelect() {
+        return pastaImagemSelect;
+    }
+
+    public void setPastaImagemSelect(Boolean pastaImagemSelect) {
+        this.pastaImagemSelect = pastaImagemSelect;
+    }
+
+    public Boolean getIndiceImagemSelect() {
+        return indiceImagemSelect;
+    }
+
+    public void setIndiceImagemSelect(Boolean indiceImagemSelect) {
+        this.indiceImagemSelect = indiceImagemSelect;
+    }
+
+    public String getNomeProcessoText() {
+        return nomeProcessoText;
+    }
+
+    public void setNomeProcessoText(String nomeProcessoText) {
+        this.nomeProcessoText = nomeProcessoText;
+    }
+
+    public String getNomeDocumentoText() {
+        return nomeDocumentoText;
+    }
+
+    public void setNomeDocumentoText(String nomeDocumentoText) {
+        this.nomeDocumentoText = nomeDocumentoText;
+    }
 
     public String getUrlsiarcoText() {
         return urlsiarcoText;
@@ -246,14 +293,6 @@ public class ConfigBean {
         this.nomecaixaText = nomecaixaText;
     }
 
-    public String getNomeprotocoloText() {
-        return nomeprotocoloText;
-    }
-
-    public void setNomeprotocoloText(String nomeprotocoloText) {
-        this.nomeprotocoloText = nomeprotocoloText;
-    }
-
     public String getNomeloteText() {
         return nomeloteText;
     }
@@ -302,6 +341,22 @@ public class ConfigBean {
 
     public void setIndicedocumentoText(String indicedocumentoText) {
         this.indicedocumentoText = indicedocumentoText;
+    }
+
+    public String getIndiceImagem() {
+        return indiceImagem;
+    }
+
+    public void setIndiceImagem(String indiceImagem) {
+        this.indiceImagem = indiceImagem;
+    }
+
+    public String getSaidaProperties() {
+        return saidaProperties;
+    }
+
+    public void setSaidaProperties(String saidaProperties) {
+        this.saidaProperties = saidaProperties;
     }
 
 }

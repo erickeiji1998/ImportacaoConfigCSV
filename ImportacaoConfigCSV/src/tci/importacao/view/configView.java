@@ -5,9 +5,9 @@
  */
 package tci.importacao.view;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import tci.importacao.bean.ConfigBean;
+import tci.importacao.properties.PropertiesCsv;
 
 /**
  *
@@ -16,6 +16,7 @@ import tci.importacao.bean.ConfigBean;
 public class configView extends javax.swing.JFrame {
 
     ConfigBean configBean = new ConfigBean();
+    Object myFrame;
 
     /**
      * Creates new form configView
@@ -92,8 +93,8 @@ public class configView extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         nomecaixaText = new javax.swing.JTextField();
-        nomeprotocoloText = new javax.swing.JTextField();
-        nomeloteText = new javax.swing.JTextField();
+        nomeProcessoText = new javax.swing.JTextField();
+        nomeDocumentoText = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         siarcosSelect = new javax.swing.JRadioButton();
         siarconSelect = new javax.swing.JRadioButton();
@@ -113,6 +114,10 @@ public class configView extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         moduloprocessoBox = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        nomeloteText1 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        indiceImagem = new javax.swing.JTextField();
 
         jMenu1.setText("jMenu1");
 
@@ -226,7 +231,7 @@ public class configView extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("URL do Webservice siarco");
         jLabel8.setToolTipText("");
-        panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, 280, -1));
+        panel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 280, -1));
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Indice do documento : ");
@@ -328,11 +333,11 @@ public class configView extends javax.swing.JFrame {
 
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Modulo de entrada");
-        panel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 80, -1, 20));
+        panel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, -1, 20));
 
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Modulo de saida");
-        panel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, -1, 20));
+        panel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 200, -1, 20));
 
         moduloentradaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Webcervice" }));
         moduloentradaBox.addActionListener(new java.awt.event.ActionListener() {
@@ -340,7 +345,7 @@ public class configView extends javax.swing.JFrame {
                 moduloentradaBoxActionPerformed(evt);
             }
         });
-        panel.add(moduloentradaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, 100, -1));
+        panel.add(moduloentradaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 160, 100, -1));
 
         tipoenvioBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Imagem", "Jucec" }));
         tipoenvioBox.addActionListener(new java.awt.event.ActionListener() {
@@ -348,7 +353,7 @@ public class configView extends javax.swing.JFrame {
                 tipoenvioBoxActionPerformed(evt);
             }
         });
-        panel.add(tipoenvioBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 90, -1));
+        panel.add(tipoenvioBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 620, 90, -1));
 
         modulosaidaBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
         modulosaidaBox.addActionListener(new java.awt.event.ActionListener() {
@@ -356,15 +361,15 @@ public class configView extends javax.swing.JFrame {
                 modulosaidaBoxActionPerformed(evt);
             }
         });
-        panel.add(modulosaidaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 120, 100, -1));
+        panel.add(modulosaidaBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 200, 100, -1));
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Modulo do processo");
-        panel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, 20));
+        panel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, -1, -1));
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("ID Modulo do processo");
-        panel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 200, 20));
+        panel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, 200, 20));
 
         idmoduloInt.setBackground(new java.awt.Color(99, 99, 119));
         idmoduloInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -373,49 +378,49 @@ public class configView extends javax.swing.JFrame {
                 idmoduloIntActionPerformed(evt);
             }
         });
-        panel.add(idmoduloInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 200, 30, -1));
+        panel.add(idmoduloInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 280, 100, -1));
 
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("DEFINIR NOME DO DOCUMENTO");
-        panel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 220, 20));
+        panel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 220, 20));
 
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Caixa");
-        panel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+        panel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
 
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("Protocolo");
-        panel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 100, 20));
+        jLabel25.setText("Processo");
+        panel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 100, 20));
 
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Lote");
-        panel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 40, 20));
+        panel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 40, 20));
 
         nomecaixaText.setBackground(new java.awt.Color(99, 99, 119));
         nomecaixaText.setForeground(new java.awt.Color(255, 255, 255));
-        panel.add(nomecaixaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 120, -1));
+        panel.add(nomecaixaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 120, -1));
 
-        nomeprotocoloText.setBackground(new java.awt.Color(99, 99, 119));
-        nomeprotocoloText.setForeground(new java.awt.Color(255, 255, 255));
-        panel.add(nomeprotocoloText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 120, -1));
+        nomeProcessoText.setBackground(new java.awt.Color(99, 99, 119));
+        nomeProcessoText.setForeground(new java.awt.Color(255, 255, 255));
+        panel.add(nomeProcessoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 120, -1));
 
-        nomeloteText.setBackground(new java.awt.Color(99, 99, 119));
-        nomeloteText.setForeground(new java.awt.Color(255, 255, 255));
-        panel.add(nomeloteText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 120, -1));
+        nomeDocumentoText.setBackground(new java.awt.Color(99, 99, 119));
+        nomeDocumentoText.setForeground(new java.awt.Color(255, 255, 255));
+        panel.add(nomeDocumentoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 120, -1));
 
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Webservice siarco");
-        panel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 250, 280, -1));
+        panel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 280, -1));
 
         siarcosSelect.setBackground(new java.awt.Color(38, 56, 74));
         siarcosSelect.setForeground(new java.awt.Color(255, 255, 255));
         siarcosSelect.setText("Sim");
-        panel.add(siarcosSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, -1, -1));
+        panel.add(siarcosSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 340, -1, -1));
 
         siarconSelect.setBackground(new java.awt.Color(38, 56, 74));
         siarconSelect.setForeground(new java.awt.Color(255, 255, 255));
         siarconSelect.setText("Não");
-        panel.add(siarconSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, -1, -1));
+        panel.add(siarconSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, -1, -1));
 
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("URL do Webservice");
@@ -428,12 +433,17 @@ public class configView extends javax.swing.JFrame {
 
         urlsiarcoText.setBackground(new java.awt.Color(99, 99, 119));
         urlsiarcoText.setForeground(new java.awt.Color(255, 255, 255));
-        panel.add(urlsiarcoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 320, 190, -1));
+        urlsiarcoText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                urlsiarcoTextActionPerformed(evt);
+            }
+        });
+        panel.add(urlsiarcoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 190, -1));
         panel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 340, 0));
 
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Numero de coluna no arquivo");
-        panel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, 20));
+        panel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, -1, 20));
 
         statusblockchainInt.setBackground(new java.awt.Color(99, 99, 119));
         statusblockchainInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -442,7 +452,7 @@ public class configView extends javax.swing.JFrame {
                 statusblockchainIntActionPerformed(evt);
             }
         });
-        panel.add(statusblockchainInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 20, -1));
+        panel.add(statusblockchainInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, 20, -1));
         panel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 580, -1, -1));
         panel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 190, -1));
 
@@ -452,7 +462,7 @@ public class configView extends javax.swing.JFrame {
 
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Campos do Webservice");
-        panel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, 280, -1));
+        panel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, 280, -1));
 
         campowebserviceText.setBackground(new java.awt.Color(99, 99, 119));
         campowebserviceText.setForeground(new java.awt.Color(255, 255, 255));
@@ -462,11 +472,11 @@ public class configView extends javax.swing.JFrame {
                 campowebserviceTextActionPerformed(evt);
             }
         });
-        panel.add(campowebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 590, 190, -1));
+        panel.add(campowebserviceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 100, 190, -1));
 
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Insere status na coluna blockChain");
-        panel.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 200, 20));
+        panel.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 200, 20));
 
         numerocolunaInt.setBackground(new java.awt.Color(99, 99, 119));
         numerocolunaInt.setForeground(new java.awt.Color(255, 255, 255));
@@ -475,11 +485,11 @@ public class configView extends javax.swing.JFrame {
                 numerocolunaIntActionPerformed(evt);
             }
         });
-        panel.add(numerocolunaInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 20, -1));
+        panel.add(numerocolunaInt, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 20, -1));
 
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Tipo de envio");
-        panel.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 130, 20));
+        panel.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 620, 130, 20));
 
         moduloprocessoBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione ...", "CQ", "Indexer", "OCR", "Content" }));
         moduloprocessoBox.addActionListener(new java.awt.event.ActionListener() {
@@ -487,7 +497,7 @@ public class configView extends javax.swing.JFrame {
                 moduloprocessoBoxActionPerformed(evt);
             }
         });
-        panel.add(moduloprocessoBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 160, 100, -1));
+        panel.add(moduloprocessoBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 240, 100, -1));
 
         jButton1.setText("Exportar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -496,6 +506,22 @@ public class configView extends javax.swing.JFrame {
             }
         });
         panel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, -1, -1));
+
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("Documento");
+        panel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, 60, -1));
+
+        nomeloteText1.setBackground(new java.awt.Color(99, 99, 119));
+        nomeloteText1.setForeground(new java.awt.Color(255, 255, 255));
+        panel.add(nomeloteText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 120, -1));
+
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Indice Imagem");
+        panel.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, 90, 20));
+
+        indiceImagem.setBackground(new java.awt.Color(99, 99, 119));
+        indiceImagem.setForeground(new java.awt.Color(255, 255, 255));
+        panel.add(indiceImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -543,12 +569,15 @@ public class configView extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void moduloprocessoBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloprocessoBoxActionPerformed
-        
+
         configBean.setModuloprocessoBox(moduloprocessoBox.getSelectedItem().toString());
-        
+
     }//GEN-LAST:event_moduloprocessoBoxActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        PropertiesCsv propertiesCsv = new PropertiesCsv();
+        String strProperties = null;
 
         if (usuarioText.getText() == null || usuarioText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Informar usuário !");
@@ -655,21 +684,21 @@ public class configView extends javax.swing.JFrame {
 
         }
 
-        if (nomeprotocoloText.getText() == null || nomeprotocoloText.getText().equals("")) {
+        if (nomeProcessoText.getText() == null || nomeProcessoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Informar o nome protocolo !");
             return;
         } else {
 
-            configBean.setNomeprotocoloText(nomeprotocoloText.getText());
+            configBean.setNomeProcessoText(nomeProcessoText.getText());
 
         }
 
-        if (nomeloteText.getText() == null || nomeloteText.getText().equals("")) {
+        if (nomeDocumentoText.getText() == null || nomeDocumentoText.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Informar o nome do lote !");
             return;
         } else {
 
-            configBean.setNomeloteText(nomeloteText.getText());
+            configBean.setNomeloteText(nomeDocumentoText.getText());
 
         }
 
@@ -761,28 +790,40 @@ public class configView extends javax.swing.JFrame {
             configBean.setIdmoduloInt(Integer.valueOf(idmoduloInt.getText()));
 
         }
-        
-        if (siarcosSelect.isSelected() == true ){
-            
+
+        if (siarcosSelect.isSelected() == true) {
+
             configBean.setSiarcosSelect(siarcosSelect.isSelected());
-            
-        }else {
-            
+
+        } else {
+
             configBean.setSiarconSelect(siarconSelect.isSelected());
-            
+
         }
-        
-        if (urlsiarcoText.getText() == null || urlsiarcoText.getText().equals ("")){
-            
+
+        if (urlsiarcoText.getText() == null || urlsiarcoText.getText().equals("")) {
+
             JOptionPane.showMessageDialog(null, "Informar a url do webservice siarco  !");
-            
-        }else{
-            
+
+        } else {
+
             configBean.setUrlsiarcoText(urlsiarcoText.getText());
-            
+
+        }
+
+        strProperties =  propertiesCsv.propetiesImportacaoCsv(configBean);
+        
+        if(!strProperties.equals(null)){
+       
+             propertiesCsv.expurgoArquivoProperties(strProperties, configBean);
+             
+        }else{
+        
+            JOptionPane.showMessageDialog(null, "Erro ao gerar properties !");
         }
         
-      
+       
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -814,6 +855,10 @@ public class configView extends javax.swing.JFrame {
     private void idmoduloIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idmoduloIntActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idmoduloIntActionPerformed
+
+    private void urlsiarcoTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urlsiarcoTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_urlsiarcoTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -869,6 +914,7 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JTextField campowebserviceText;
     private javax.swing.JTextField configdigitalizacaoText;
     private javax.swing.JTextField idmoduloInt;
+    private javax.swing.JTextField indiceImagem;
     private javax.swing.JTextField indicedocumentoText;
     private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
@@ -897,7 +943,9 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
@@ -919,9 +967,10 @@ public class configView extends javax.swing.JFrame {
     private javax.swing.JComboBox moduloentradaBox;
     private javax.swing.JComboBox moduloprocessoBox;
     private javax.swing.JComboBox modulosaidaBox;
+    private javax.swing.JTextField nomeDocumentoText;
+    private javax.swing.JTextField nomeProcessoText;
     private javax.swing.JTextField nomecaixaText;
-    private javax.swing.JTextField nomeloteText;
-    private javax.swing.JTextField nomeprotocoloText;
+    private javax.swing.JTextField nomeloteText1;
     private javax.swing.JTextField numerocolunaInt;
     private javax.swing.JPanel panel;
     private javax.swing.JTextField senhaText;
